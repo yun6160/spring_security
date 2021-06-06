@@ -22,4 +22,9 @@ public class SecurityController {
 	public void doMember() {
 		log.info("logined member");
 	}
+	
+	@GetMapping("/admin")
+	public void doAdmin() {
+		log.info("admin only");
+	}
 }
