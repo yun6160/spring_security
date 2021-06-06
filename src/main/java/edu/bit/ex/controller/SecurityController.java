@@ -20,7 +20,6 @@ public class SecurityController {
 
 	@GetMapping("/member")
 	public void doMember() {
-
 		log.info("logined member");
 	}
 }
