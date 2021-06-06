@@ -27,4 +27,10 @@ public class SecurityController {
 	public void doAdmin() {
 		log.info("admin only");
 	}
+	
+	  @GetMapping("/accessError")
+	  public void accessError(Authentication auth,Model model) {
+		  log.info("accessd denied:" + auth);
+		  model.addAttribute("msg","Access Denied");
+	  }
 }
