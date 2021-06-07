@@ -1,3 +1,6 @@
+drop table authorities;
+drop table users;
+
 create table users(
 	username varchar2(50) not null primary key,
 	password varchar2(100) not null,
