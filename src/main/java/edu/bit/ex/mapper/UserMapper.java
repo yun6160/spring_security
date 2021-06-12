@@ -1,5 +1,6 @@
 package edu.bit.ex.mapper;
 
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 
 import edu.bit.ex.vo.UserVO;
@@ -11,6 +12,13 @@ public interface UserMapper {
 
 	@Insert("insert into AUTHORITIES (username,AUTHORITY) values(#{username},'ROLE_USER')")
 	public void insertAuthorities(UserVO UserVO);
+	
+	@Delete("delete from users")
+	public void deleteUsers();
+	
+	@Delete("delete from AUTHORITIES")
+	public void deleteAuthorities();
+	
  
 	
 }

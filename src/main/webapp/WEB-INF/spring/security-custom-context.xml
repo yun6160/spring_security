@@ -10,6 +10,7 @@
  <!--     	<intercept-url pattern="/restful/**" access="permitAll" /> -->
 <!-- 		<intercept-url pattern="/restful/write" access="hasAnyRole('USER, ADMIN')" /> -->
         <intercept-url pattern="/login/**" access="permitAll" />
+        <intercept-url pattern="/tran/**" access="permitAll" />
         <intercept-url pattern="/" access="permitAll" />
         <intercept-url pattern="/admin/**" access="hasRole('ADMIN')" />
         <intercept-url pattern="/**" access="hasAnyRole('USER, ADMIN')" />
