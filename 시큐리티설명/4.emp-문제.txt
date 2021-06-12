@@ -1,4 +1,4 @@
-emp table에서 정보를 가져와서 로그인할 때 ename(blake)을 id로, 
+ System.out.println(empUser.getEmp());       emp table에서 정보를 가져와서 로그인할 때 ename(blake)을 id로, 
 empno(7698)를 pw로 사용해서 로그인한 뒤, 매니저는 admin, 나머지는 user 권한을 주자. 
 (blake는 manager니까 user, admin 페이지 모두 접근 가능! 
 그러나 일반 사원인 smith는 user페이지만 접근 가능)
