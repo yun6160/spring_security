@@ -1,0 +1,58 @@
+/* 오라클 데이터베이스 sql 문
+
+-- 테이블 생성
+create table login (
+idx number(10) primary key,
+id varchar2(20) not null,
+pw varchar2(20) not null,
+name varchar2(20) not null,
+age number(4) not null,
+email varchar2(50) not null
+);
+
+-- 시퀀스 생성
+create SEQUENCE login_seq;
+
+-- admin 1111 등록
+insert into login values(login_seq.nextval, 'admin', '1111', 'admin', 30, 'admin@google.com');
+
+commit;
+
+-- 아이디 목록 확인
+select * from login;
+
+*/
+
+
+[tomcat]이 설치된 디렉토리/conf/web.xml 에서 아래 부분을 편집
+단위는 분, 기본은 30분으로 설정되어 있음
+
+<session-config>
+<session-timeout>360</session-timeout>
+</session-config>
+
+** 세션 타임아웃 적용 우선순위
+
+1. 프로그램에 코딩된 session.setMaxInactiveInterval(int)
+2. 각 웹 어플리케이션의 WEB-INF/web.xml
+3. [tomcat설치디렉토리]/conf/web.xml
+
+
+/*
+	로그인된 유저에게만 리스트를 보이게 하고 싶음.
+	1.jsp 파일자체에서 막는 방법
+	2.controller에서 막는 방법	
+*/
+
+/*
+Filter와 Interceptor는 실행되는 시점이 다르다.
+Filter는 Web Application에 등록을 하고, Interceptor는 Spring의 Context에 등록을 한다.
+*/
+
+셀프복사(재귀 복사)
+
+select mvc_board_seq.nextval, bName, bTitle, bContent, 0, mvc_board_seq.currval, 0, 0 from mvc_board;
+
+
+insert into mvc_board (bId, bName, bTitle, bContent, bHit, bGroup, bStep, bIndent) 
+		       values (select mvc_board_seq.nextval, bName, bTitle, bContent, 0, mvc_board_seq.currval, 0, 0 from mvc_board)
